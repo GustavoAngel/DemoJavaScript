@@ -1,0 +1,50 @@
+body {
+    background-color: #2C3E50;
+}
+
+h1{
+    color: white;
+}
+
+/* div {
+    color: white;
+} */
+
+.ListLanguages{
+    padding: 5px;
+    text-align: center;
+    display: block;    
+}
+
+input[type=button]{
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.buttonLG{
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}
+
+.buttonLG:hover{
+    color: black;
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.img-button{
+    height: 25px;
+    width: 35px;    
+}
+
+.img-container {
+    text-align: center;
+    display: block;
+  }
