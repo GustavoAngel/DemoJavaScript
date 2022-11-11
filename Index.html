@@ -12,16 +12,14 @@
         
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
-                
+            <div class="col-md-8">                
                 <span class="img-container"> <!-- Inline parent element -->
                     <img src="https://lenguajejs.com/assets/logo.svg" alt="Logo js" class="text-center">
-                </span>            
-
+                </span>           
                 <h1 class="text-center">Programming languages</h1>
                 <input id="InputTXT" class="form-control" type="text" placeholder="e.g JavaScript" aria-label="default input example">
                 <div class="col-md-12 container " >
-                    <div id="ListaDiv" class="row ListLanguages" >
+                    <div id="MainDiv" class="row ListLanguages" >
 
                     </div>
                 </div>
@@ -30,87 +28,84 @@
         </div>
         
         <script type="text/javascript">
-
-            let Lista=JSON.parse(localStorage.getItem("LsLanguages")) ;
-            
+            //Set Main list item the local storage
+            let MainListitems=JSON.parse(localStorage.getItem("LsLanguages")) ;
+            //Add listener for page loaded
             document.addEventListener("DOMContentLoaded", function(event) {
-               
-                if (Lista!=null && Lista.length >0) {
-                    Lista.forEach(element => {
-                    mCargarElementos(element.sName,element.iId);
-                    });
-                }          
-            }            
-            );
+                //Validamos que la lista tenga algun elemento o no sea nula
+                if (MainListitems!=null && MainListitems.length >0) 
+                    MainListitems.forEach(element =>  fDrawingItemScreen(element.sName,element.iId) );
+            });
 
-            function mCargarElementos(pintar,id)
+            document.getElementById("InputTXT").onkeydown = function() {fKeyDownInputMain(event)};
+
+            function fDrawingItemScreen(sDrawingText="",id=0)
             {
-                let contenedor= document.getElementById('ListaDiv');
-                    //<i class="fa fa-home"></i>
-                let IconoDelete=document.createElement('i');
-                //<i class="fa-sharp fa-solid fa-trash"></i>
-                IconoDelete.className="fa fa-trash float-end";
-
-                let conte=document.createElement('div');
-                conte.className="";
-
-                let teto =document.createElement('span');
-                teto.textContent=pintar;
-                teto.style='width: 110';
-                conte.innerText=pintar;
-                conte.appendChild(IconoDelete);
-
-                 boton = document.createElement('button');
-                 boton.className="btn btn-outline-light buttonLG";
-                 //boton.type = 'button';
-                 
-                 boton.appendChild(conte);
-                 
-                // boton.value = pintar;
-                 boton.id= 'div'+pintar+id;
-                 boton.dataset.id=id;
-                 boton.name = 'div'+pintar+id;
-                 boton.onclick = function () {borrar(this.name)} //aqui llamamos a la funcion borrar
-                
-                // newdivv.appendChild(boton);
-
-                document.getElementById('ListaDiv').appendChild(boton);
-               
+                //Created the element for delete icon
+                let DeleteIcon=document.createElement('i');
+                //Set the class for the icon
+                DeleteIcon.className="fa fa-trash float-end";
+                //Created the SubDiv for elements visuals
+                let SubDivtextAndIcon=document.createElement('div');
+                //drawing the text for de item
+                SubDivtextAndIcon.innerText=sDrawingText;
+                //ADD item delete icon  in screen
+                SubDivtextAndIcon.appendChild(DeleteIcon);
+                // Created main button for this item
+                Itemlanguageboton = document.createElement('button');
+                // item class 
+                Itemlanguageboton.className="btn btn-outline-light buttonLG";
+                //Add node to this button
+                Itemlanguageboton.appendChild(SubDivtextAndIcon);
+                //Id for this item in DOM HTML
+                Itemlanguageboton.id= 'div'+sDrawingText+id;
+                //Id for this item
+                Itemlanguageboton.dataset.id=id;
+                 //Add event click for this control
+                 Itemlanguageboton.onclick = function () {fDeleteItem(this.id)} //aqui llamamos a la funcion fDeleteItem
+                //Add botton en the screen
+                document.getElementById('MainDiv').appendChild(Itemlanguageboton);
             }
 
-            function borrar(obj) {//aqui la ejecutamos
-                let languajeSeleccionado=document.getElementById(obj)
-                document.getElementById('ListaDiv').removeChild(languajeSeleccionado);
-                Lista=Lista.filter(o => o.iId != languajeSeleccionado.dataset.id);
-                localStorage.setItem("LsLanguages",JSON.stringify(Lista));
+            function fDeleteItem(obj='') {
+                //a reference to the DOM object is created
+                let sNameObjtoDelete=document.getElementById(obj)
+                //Delete item in the screen
+                document.getElementById('MainDiv').removeChild(sNameObjtoDelete);
+                //Delete item  in the list
+                MainListitems=MainListitems.filter(o => o.iId != sNameObjtoDelete.dataset.id);
+                //Save tha infomacion in localstorage in format JSON Se guarda la infomacion en localstorage en formato json 
+                localStorage.setItem("LsLanguages",JSON.stringify(MainListitems));
             }
 
-            document.getElementById("InputTXT").onkeydown = function() {myFunction(event)};
+            function fKeyDownInputMain(event) {
 
-            function myFunction(event) {
                 let control=document.getElementById("InputTXT");
                 
                 if (event.key=="Enter" && control.value.trim()!="") {
-
-                    if (Lista!=null && Lista.length>0) {
-                        
-                    }else{
-                        Lista= [];
+                    //it is created the first id for the list
+                    let iNextId=0;
+                    //check that the list is not null
+                    if (MainListitems==null ) {
+                        MainListitems= []; // in this case initialize  to new array
+                    }else if(MainListitems.length>0){
+                       iNextId=MainListitems.sort(a=>a.iId)[MainListitems.length - 1].iId+1;
                     }
+                    // create new object to the item list
                     let objetoLenguaje= {
-                        iId: Lista.length,
+                        iId: iNextId,
                         sName: control.value
                     };                    
-                    Lista.push(objetoLenguaje);                    
-
-                    mCargarElementos(control.value,objetoLenguaje.iId);
-
-                    localStorage.setItem("LsLanguages",JSON.stringify(Lista));
-
+                    // Add item to array obj
+                    MainListitems.push(objetoLenguaje);                    
+                    //Draw item in screen
+                    fDrawingItemScreen(control.value,objetoLenguaje.iId);
+                    //Save list en memory local
+                    localStorage.setItem("LsLanguages",JSON.stringify(MainListitems));
+                    //Reset value en screen
                     control.value="";   
                 }                
             }
-
         </script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
