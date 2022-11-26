@@ -90,6 +90,7 @@
             border-radius: 50%;
             border: 4px solid white;
             position: absolute;
+            z-index: 1;
         }
 
         .card .follow{
@@ -201,6 +202,7 @@
         background: #242424;
     }
     .item2{
+        
         height: 100%;
         width: 100%;
         background: rgb(255, 255, 255);
@@ -213,9 +215,17 @@
         width: 100%;
         background: #242424;
     }
+    nav{
+        width: 100%;
+        height: 60px;
+        background: white;
+    }
     </style>
 </head>
 <body id="bodyMain">
+    <nav>
+
+    </nav>
     <article class="card" id="ArticuloPresentacion">
         <div class="card-top">
 
@@ -232,7 +242,7 @@
                 <a href="#">View projects</a>
             </div>
             <div class="email">
-                <a href="mailto:gustavoandradeangel@hotmail.com">Send email</a>
+                <a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf"  target="_blank" >Curriculum</a>
             </div>
         </div>
         <div class="social">
@@ -247,11 +257,13 @@
         </div>
 
         <a class="follow" href="https://www.linkedin.com/in/gustavoandrade-full-stack-developer/" target="_blank" >
+       
             <div class="linkButton">
                 <span >
                 <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  >
                 Linkedin</span>
             </div>
+          
         </a>
     </article>
     <div id="app" style="display:flex; justify-content:center ; align-items: center; flex-direction: row; flex-wrap: wrap;">
@@ -299,14 +311,18 @@
             },            
             template:`  <article class="card">
                         <div class="stackDiv">
-                            <div class="item1"  > 
+                            <div class="item1"> 
+                                
                                 <img class="profile-data--img2" :src='post.img' alt="">
                                 <div class="column" style=" margin-top: 50px; margin-left: 10px; " >
                                     <h1>{{post.message}}</h1>
                                     <h2>{{post.sueldo}}</h2>
                                 </div>
                             </div>
-                            <div class="item2"></div>
+                        
+                            <div class="item2">
+                                <img style="position:absolute; width:100%; height:100px; " :src='post.img' alt="">
+                                </div>
                             <div class="follow item3" style=" height: 85px;" ></div>           
 
                         </div>
