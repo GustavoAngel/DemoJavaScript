@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Andrade Angel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+         *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        html{
+        font-size: 62.5%;
+    }
+        body{
+            background-color: #34495e;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .card{
+            min-width: 280px;
+            width: 390px;
+            height: 600px;
+            background-color: #242424;
+            border-radius: 40px;
+            box-shadow:0px 10px 10px 5px rgba(0,0,0,0.16);
+            margin:20px;
+            transition-duration: 200ms;
+            
+        }
+        .card .card-top{
+            background: url("https://images.pexels.com/photos/5483071/pexels-photo-5483071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
+            height: 233px;
+            border-radius: 40px 40px 0 0;
+        }
+        .card .profile-data{
+            width: 100%;
+            height: 243px;
+            padding: 0 10px;
+        }
+        .card .profile-data h1{
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .card .profile-data h2{
+            font-size: 20px;
+            font-weight: 500;
+            color: #666666;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .card .profile-data p{
+            font-size: 20px;
+            font-weight: 500;
+            color: #666666;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .card .profile-data--img{
+            display: block;
+            width: 145px;
+            height: 145px;
+            margin: 0px auto;
+            margin-top: -75px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+        .card .follow{
+            background-color: #060916;
+            width: 100%;
+            height: 63px;
+            border-radius: 0 0 40px 40px;
+            display: flex;
+            cursor: pointer;
+            
+            
+        }
+        .card .follow span{
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 auto;
+            align-self: center;
+            transition-duration: 500ms;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card .follow:hover{
+            background-color: #0A0F24;
+        }
+        .card .follow:hover span{
+            font-size: 2.2rem;
+            transition-duration: 200ms;
+        }
+
+        .card .social{
+        display: inline-flex;
+        width: 100%;
+        height: 67px;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        background: #2E2E2E;
+    }
+    .card .social p{
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+    }
+    .card .social span{
+        font-size: 1.4rem;
+        color: #C2C2C2;
+    }
+
+    .card .profile-links{
+        display: inline-flex;
+        width: 100%;
+        height: 67px;
+        margin-top: 25px;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .card .profile-links a{
+        font-size: 1.8rem;
+        text-align: center;
+        color: #C2C2C2;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .card .profile-links a:hover{
+        color: white;
+    }
+
+    .card .follow img{
+        height: 35px;
+        width: 35px;
+        display: flex;
+    }
+
+    .card .follow .linkButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }    
+   
+    </style>
+</head>
+<body id="bodyMain">
+    <article class="card" id="ArticuloPresentacion">
+        <div class="card-top">
+
+        </div>
+        <div class="profile-data">
+            <img id="PerfilFotoImg" class="profile-data--img"src="https://media-exp1.licdn.com/dms/image/D4E03AQFD9eyATdw3pw/profile-displayphoto-shrink_800_800/0/1669437044639?e=1674691200&v=beta&t=9wha_Mbl4wR1TWYzRb3k_J_Lge6BmlcuY-9rbFnUZ8I" alt="Perfil">
+            <h1>Gustavo Andrade Angel</h1>
+            <h2>Frontend Developer</h2>
+            <p><span></span>México</p>
+        </div>
+
+        <div class="profile-links">
+            <div class="projects">
+                <a href="#">View projects</a>
+            </div>
+            <div class="email">
+                <a href="mailto:gustavoandradeangel@hotmail.com">Send email</a>
+            </div>
+        </div>
+        <div class="social">
+            <div>
+                <p>592</p>
+                <span>Followers</span>
+            </div>
+            <div>
+                <p>139</p>
+                <span> Follows </span>
+            </div>
+        </div>
+
+        <a class="follow" href="https://www.linkedin.com/in/gustavoandrade-full-stack-developer/" target="_blank" >
+            <div class="linkButton">
+                <span >
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  >
+                Linkedin</span>
+            </div>
+        </a>
+    </article>
+    <script>
+        document.getElementById("PerfilFotoImg").onclick = function () {
+            ClickProfile(event);
+        };
+
+        function ClickProfile(e){
+            document.getElementById("bodyMain").style='justify-content: left;';
+        }
+        
+    </script>
+</body>
+
+</html>
