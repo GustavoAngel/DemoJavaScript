@@ -37,7 +37,7 @@
             box-shadow:0px 10px 10px 5px rgba(0,0,0,0.16);
             margin:20px;
             transition-duration: 200ms;
-            
+            overflow: hidden;
         }
         .card .card-top{
             background: url("https://images.pexels.com/photos/5483071/pexels-photo-5483071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
@@ -79,6 +79,19 @@
             border-radius: 50%;
             border: 4px solid white;
         }
+
+        .card .profile-data--img2{
+            display: block;
+            width: 145px;
+            height: 145px;
+            margin: 0px auto;
+            margin-top: 115px;
+            margin-left: 60%;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute;
+        }
+
         .card .follow{
             background-color: #060916;
             width: 100%;
@@ -180,28 +193,25 @@
     }
 
     .stackDiv h1{
-        color: #34495e;
-        height: 50%;
-        width: 50%;
-    
-        
+        color: white;
     }
     .item3{
-        height: 100%;
+        height: 85px;
         width: 100%;
-        background: rgb(170, 170, 170);
+        background: #242424;
     }
     .item2{
         height: 100%;
         width: 100%;
-        background: rgb(0, 212, 202);
+        background: rgb(255, 255, 255);
     }
     .item1{
         display: flex;
+        flex-direction: column;
         color: white;
-        height: 100%;
+        height: 50%;
         width: 100%;
-        background: rgb(0, 0, 0);
+        background: #242424;
     }
     </style>
 </head>
@@ -244,7 +254,7 @@
             </div>
         </a>
     </article>
-    <div id="app" style="display:flex; flex-direction: row; flex-wrap: wrap;">
+    <div id="app" style="display:flex; justify-content:center ; align-items: center; flex-direction: row; flex-wrap: wrap;">
         
     </div>
      <!-- <article class="card">
@@ -266,31 +276,38 @@
                  return {
                      Attr:'src',
                      img: "https://images.pexels.com/photos/10026491/pexels-photo-10026491.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                     items: [{ message: 'Foo' }, { message: 'Bar' }, { message: 'Bar' }]
+                     items: [
+                        { message: 'JavaScript Vainilla',sueldo:30000,img:"./styles/jslogo.png" }, 
+                        { message: 'VUE.js',sueldo:30000,img:"https://ih1.redbubble.net/image.393347411.1344/pp,840x830-pad,1000x1000,f8f8f8.u5.jpg" }, 
+                        { message: 'React.js',sueldo:30000,img:"https://assets.stickpng.com/thumbs/584830f5cef1014c0b5e4aa1.png" }
+                    ]
                  };
              },
-             template:`<item v-for="item in items" />`
+             template:`<item v-for="item in items" v-bind:post="item" />`
  
          })
         
          app.component("item",{
             data(){
                 return {
-                    items: [{ message: 'Foo' }, { message: 'Bar' }]
+                    
                 }
             },
             props:["post","index"],
             methods:{
-
+                
             },            
             template:`  <article class="card">
                         <div class="stackDiv">
-                            <div class="item1"> 
-                                <img src="./styles/jslogo.png" alt="">
-                                <h1>JavaScript</h1>
+                            <div class="item1"  > 
+                                <img class="profile-data--img2" :src='post.img' alt="">
+                                <div class="column" style=" margin-top: 50px; margin-left: 10px; " >
+                                    <h1>{{post.message}}</h1>
+                                    <h2>{{post.sueldo}}</h2>
+                                </div>
                             </div>
                             <div class="item2"></div>
-                            <div class="item3"></div>           
+                            <div class="follow item3" style=" height: 85px;" ></div>           
 
                         </div>
                     </article>
@@ -305,7 +322,7 @@
         };
 
         function ClickProfile(e){
-            document.getElementById("bodyMain").style='justify-content: left;';
+            //document.getElementById("bodyMain").style='justify-content: left;';
         }
         
     </script>
