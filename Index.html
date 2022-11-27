@@ -321,11 +321,11 @@
 </head>
 <body id="bodyMain">
     
-        <nav class="navMenu">
+        <nav id="menu" class="navMenu">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#news">Experiencia</a></li>
-                <li><a href="#certificaines" target="_blank">Certificaciones</a></li>
+                <li><a href="#certificaines" onclick="preguntar()" target="_self">Certificaciones</a></li>
                 <li><a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf" target="_blank">Curriculum</a></li>
                 <!-- <li style="float:right"><a class="active" href="#about">About</a></li> -->
               </ul>
@@ -405,6 +405,14 @@
    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
+        
+        //document.readyState(function () {
+         //adds menu.html content into any "#menu" element
+           // document.getElementById('menu').innerHTML='menu.html';
+        //});
+        function preguntar(){
+            console.log(app);
+        }
         const app= Vue.createApp({
              data(){
                  return {
