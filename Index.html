@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -22,16 +20,15 @@
             margin: 0;
         }
         html{
-        font-size: 62.5%;
-    }
+            font-size: 62.5%;
+            height: 100%;
+        }
         body{
             background-color: #34495e;
             width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
+            height: 100vh;
+            display: block;
+        
             font-family: 'Open Sans', sans-serif;
         }
         .card{
@@ -228,13 +225,18 @@
         top: 0px;
         z-index: 2;
     }
-  
+    .divFooter{
+        width: 100%;
+        bottom: 0px;
+        position: fixed;
+        z-index: 2;
+    }
     .footer{
         width: 100%;
         height: 100px; 
-        position: sticky;
+        
         z-index:2 ; 
-        bottom: 0px;   
+        
         display: flex;
         height: 60px;
         background: rgb(0, 201, 184);
@@ -274,67 +276,105 @@
     .active {
     background-color:  #333;
     }
+
+    .divMain{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .divArticles{
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    p a{
+        color: white;
+        font-size: 1.5rem;
+    }
+    p a::hover{
+        color: #060916;
+    }
+
+    a:link, a:visited {
+        
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
     </style>
 </head>
 <body id="bodyMain">
-    <nav class="navMenu">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">Experiencia</a></li>
-            <li><a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf" target="_blank">Curriculum</a></li>
-            <li style="float:right"><a class="active" href="#about">About</a></li>
-          </ul>
-    </nav>
-    <article class="card" id="ArticuloPresentacion">
-        <div class="card-top">
-
-        </div>
-        <div class="profile-data">
-            <img id="PerfilFotoImg" class="profile-data--img"src="https://media-exp1.licdn.com/dms/image/D4E03AQFD9eyATdw3pw/profile-displayphoto-shrink_800_800/0/1669437044639?e=1674691200&v=beta&t=9wha_Mbl4wR1TWYzRb3k_J_Lge6BmlcuY-9rbFnUZ8I" alt="Perfil">
-            <h1>Gustavo Andrade Angel</h1>
-            <h2>Frontend Developer</h2>
-            <p><span></span>México</p>
-        </div>
-
-        <div class="profile-links">
-            <div class="projects">
-                <a href="#">View projects</a>
-            </div>
-            <div class="email">
-                <a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf"  target="_blank" >Curriculum</a>
-            </div>
-        </div>
-        <div class="social">
-            <div>
-                <p>592</p>
-                <span>Followers</span>
-            </div>
-            <div>
-                <p>139</p>
-                <span> Follows </span>
-            </div>
-        </div>
-
-        <a class="follow" href="https://www.linkedin.com/in/gustavoandrade-full-stack-developer/" target="_blank" >
-       
-            <div class="linkButton">
-                <span >
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  >
-                Linkedin</span>
-            </div>
-          
-        </a>
-    </article>
-    <div id="app" style="display:flex; justify-content:center ; align-items: center; flex-direction: row; flex-wrap: wrap;">
-        
-    </div>
     
-    <div class="footer" >
+        <nav class="navMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">Experiencia</a></li>
+                <li><a href="#certificaines" target="_blank">Certificaciones</a></li>
+                <li><a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf" target="_blank">Curriculum</a></li>
+                <li style="float:right"><a class="active" href="#about">About</a></li>
+              </ul>
+        </nav>
+
+        <div class="divArticles">
+            <div>
+                <article class="card" id="ArticuloPresentacion">
+                    <div class="card-top">
+            
+                    </div>
+                    <div class="profile-data">
+                        <img id="PerfilFotoImg" class="profile-data--img"src="https://media-exp1.licdn.com/dms/image/D4E03AQFD9eyATdw3pw/profile-displayphoto-shrink_800_800/0/1669437044639?e=1674691200&v=beta&t=9wha_Mbl4wR1TWYzRb3k_J_Lge6BmlcuY-9rbFnUZ8I" alt="Perfil">
+                        <h1>Gustavo Andrade Angel</h1>
+                        <h2>Frontend Developer</h2>
+                        <p><span></span>México</p>
+                    </div>
+            
+                    <div class="profile-links">
+                        <div class="projects">
+                            <a href="#">View projects</a>
+                        </div>
+                        <div class="email">
+                            <a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf"  target="_blank" >Curriculum</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div>
+                            <p>592</p>
+                            <span>Followers</span>
+                        </div>
+                        <div>
+                            <p>139</p>
+                            <span> Follows </span>
+                        </div>
+                    </div>
+            
+                    <a class="follow" href="https://www.linkedin.com/in/gustavoandrade-full-stack-developer/" target="_blank" >
+                
+                        <div class="linkButton">
+                            <span >
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  >
+                            Linkedin</span>
+                        </div>
+                    
+                    </a>
+                </article>
+            </div>
         
-            <p>Author: Gustavo Andrade Angel</p>
+            <div id="app" style="display:flex; justify-content:center ; align-items: center; flex-direction: row; flex-wrap: wrap;">
+                
+            </div>
+        </div>
+    
+    <div class="divFooter" >
+        <div class="footer" >
+            
             <p><a href="mailto:GustavoAndradeAngel@hotmail.com">GustavoAndradeAngel@hotmail.com</a></p>
-        
+        </div>
     </div>
+
 
      <!-- <article class="card">
         <div class="stackDiv">
@@ -357,7 +397,7 @@
                      img: "https://images.pexels.com/photos/10026491/pexels-photo-10026491.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                      items: [
                         { message: 'JavaScript Vainilla',sueldo:30000,img:"./styles/jslogo.png" }, 
-                       
+              
                         { message: 'VUE.js',sueldo:30000,img:"https://ih1.redbubble.net/image.393347411.1344/pp,840x830-pad,1000x1000,f8f8f8.u5.jpg" }, 
                         { message: 'React.js',sueldo:30000,img:"./styles/React.png" }
                     ]
