@@ -222,8 +222,7 @@
     }
     .navMenu{
         width: 100%;
-        
-        position: sticky;
+        position: fixed;
         top: 0px;
         z-index: 2;
     }
@@ -289,6 +288,7 @@
         height: 100%;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
     }
@@ -308,7 +308,11 @@
         text-decoration: none;
         display: inline-block;
     }
-    
+    @media (max-width: 620px) {
+        .divFooter{
+           display: none;
+        }
+    }
     </style>
 </head>
 <body id="bodyMain">
@@ -319,11 +323,11 @@
                 <li><a href="#news">Experiencia</a></li>
                 <li><a href="#certificaines" target="_blank">Certificaciones</a></li>
                 <li><a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf" target="_blank">Curriculum</a></li>
-                <li style="float:right"><a class="active" href="#about">About</a></li>
+                <!-- <li style="float:right"><a class="active" href="#about">About</a></li> -->
               </ul>
         </nav>
 
-        <div class="row">
+        <div id="ariculosDiv" class="divArticles">
       
             
                 <article class="card animate glow delay-1" id="ArticuloPresentacion">
