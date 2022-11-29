@@ -15,8 +15,11 @@ body{
 
     font-family: 'Open Sans', sans-serif;
 }
+.menu-ico{
+    display: none;
+}
 .card{
-    min-width: 280px;
+    min-width: 380px;
     width: 390px;
     height: 600px;
     background-color: #242424;
@@ -293,42 +296,45 @@ text-decoration: none;
 display: inline-block;
 }
 @media (max-width: 620px) {
-.tope{
-    width: 50px; height:50px; 
-}
-#ariculosDiv{
-    margin-top: 100px;
-    
-}
-.navMenu ul>li:nth-child(1){
-    display: none;
-}
-.navMenu ul>li:nth-child(2){
-    display: none;
-}
-.navMenu ul>li:nth-child(3){
-    display: none;
-}
-.navMenu ul>li:nth-child(4){
-    display: none;
-}
-.navMenu {
-    height: 52px;
-}        
-.logo-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .tope{
+        width: 50px; height:50px; 
+    }
+    #ariculosDiv{
+        margin-top: 100px;
+    }
+    .navMenu ul>li:nth-child(1){
+        display: none;
+    }
+    .navMenu ul>li:nth-child(2){
+        display: none;
+    }
+    .navMenu ul>li:nth-child(3){
+        display: none;
+    }
+    .navMenu ul>li:nth-child(4){
+        display: none;
+    }
+    .navMenu {
+        height: 52px;
+    }        
+
+    .logo-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-ico{
+        display: inline;
+        z-index: 3;
+        position: fixed;
+        margin-top: 16px;
+        margin-left: 16px;
+    }
 }
 
 .logo{
-position: absolute;
-justify-content: center;
-
-margin-top: 10px;
-margin-left: 10px;
-position: fixed;
-top: 0px;
-z-index: 3;
+    margin-left: 10px;
+    position: fixed;
+    top: 13px;
+    z-index: 3;
 }
