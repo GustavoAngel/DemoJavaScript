@@ -3,6 +3,11 @@
     padding: 0;
     margin: 0;
 }
+
+:root{
+    --yellow-js: #fafafa;
+}
+
 html{
     font-size: 62.5%;
     height: 100%;
@@ -62,6 +67,7 @@ body{
 }
 .card .profile-data--img{
     display: block;
+    object-fit: cover;
     width: 145px;
     height: 145px;
     margin: 0px auto;
@@ -72,6 +78,7 @@ body{
 
 .card .profile-data--img2{
     display: block;
+    object-fit: cover;
     width: 145px;
     height: 145px;
     margin: 0px auto;
@@ -198,12 +205,12 @@ width: 100%;
 background: rgb(255, 255, 255);
 }
 .item1{
-display: flex;
-flex-direction: column;
-color: white;
-height: 50%;
-width: 100%;
-background: #242424;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 50%;
+    width: 100%;
+    background: #242424;
 }
 .navMenu{
 position: absolute;
@@ -295,6 +302,7 @@ text-align: center;
 text-decoration: none;
 display: inline-block;
 }
+
 @media (max-width: 620px) {
     .tope{
         width: 50px; height:50px; 
