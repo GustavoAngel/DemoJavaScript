@@ -1,23 +1,37 @@
-body{
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    width: 100%;
-    height: 100vh;
-    display: block;
-
-    font-family: 'Open Sans', sans-serif;
-}
 
 .certificados-container{
    display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   z-index: 3;
 }
 
 .certificado{
     margin: 5px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
+    overflow: hidden;
     width: 450px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .certificado img{
+    height: auto;
     object-fit: cover;
+}
+
+.zoom {
+    cursor: pointer;
+    transition: transform .2s;
+  }
+
+.zoom:hover {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
