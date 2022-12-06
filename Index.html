@@ -22,61 +22,61 @@
     <div class="logo-container">
         <img src="./iconos/favicon-32x32.png" class="logo"  alt="logo">        
     </div>
-        <nav id="menu" class="navMenu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#news">Experiencia</a></li>
-                <li><a href="./certificaciones.html" onclick="preguntar()" target="_self">Certificaciones</a></li>
-                <li><a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf" target="_blank">Curriculum</a></li>
-                <!-- <li style="float:right"><a class="active" href="#about">About</a></li> -->
-            </ul>
-        </nav>
+    <nav id="menu" class="navMenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">Experiencia</a></li>
+            <li><a href="./certificaciones.html" onclick="preguntar()" target="_self">Certificaciones</a></li>
+            <li><a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf" target="_blank">Curriculum</a></li>
+            <!-- <li style="float:right"><a class="active" href="#about">About</a></li> -->
+        </ul>
+    </nav>
 
-        <div id="ariculosDiv" class="divArticles">
-                <article class="card animate glow delay-1" id="ArticuloPresentacion">
-                    <div class="card-top">
+    <div id="ariculosDiv" class="divArticles">
+            <article class="card animate glow delay-1" id="ArticuloPresentacion">
+                <div class="card-top">
+        
+                </div>
+                <div class="profile-data">
+                    <img id="PerfilFotoImg" class="profile-data--img"src="https://media-exp1.licdn.com/dms/image/D4E03AQFD9eyATdw3pw/profile-displayphoto-shrink_800_800/0/1669437044639?e=1674691200&v=beta&t=9wha_Mbl4wR1TWYzRb3k_J_Lge6BmlcuY-9rbFnUZ8I" alt="Perfil">
+                    <h1>Gustavo Andrade Angel</h1>
+                    <h2>Frontend Developer</h2>
+                    <p><span></span>México</p>
+                </div>
+        
+                <div class="profile-links">
+                    <div class="projects">
+                        <a href="#">View projects</a>
+                    </div>
+                    <div class="email">
+                        <a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf"  target="_blank" >Curriculum</a>
+                    </div>
+                </div>
+                <div class="social">
+                    <div>
+                        <p>592</p>
+                        <span>Followers</span>
+                    </div>
+                    <div>
+                        <p>139</p>
+                        <span> Follows </span>
+                    </div>
+                </div>
+        
+                <a class="follow" href="https://www.linkedin.com/in/gustavoandrade-full-stack-developer/" target="_blank" >
             
+                    <div class="linkButton">
+                        <span >
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  >
+                        Linkedin</span>
                     </div>
-                    <div class="profile-data">
-                        <img id="PerfilFotoImg" class="profile-data--img"src="https://media-exp1.licdn.com/dms/image/D4E03AQFD9eyATdw3pw/profile-displayphoto-shrink_800_800/0/1669437044639?e=1674691200&v=beta&t=9wha_Mbl4wR1TWYzRb3k_J_Lge6BmlcuY-9rbFnUZ8I" alt="Perfil">
-                        <h1>Gustavo Andrade Angel</h1>
-                        <h2>Frontend Developer</h2>
-                        <p><span></span>México</p>
-                    </div>
-            
-                    <div class="profile-links">
-                        <div class="projects">
-                            <a href="#">View projects</a>
-                        </div>
-                        <div class="email">
-                            <a href="./recursos/CV-Gustavo Andrade  Angel (1).pdf"  target="_blank" >Curriculum</a>
-                        </div>
-                    </div>
-                    <div class="social">
-                        <div>
-                            <p>592</p>
-                            <span>Followers</span>
-                        </div>
-                        <div>
-                            <p>139</p>
-                            <span> Follows </span>
-                        </div>
-                    </div>
-            
-                    <a class="follow" href="https://www.linkedin.com/in/gustavoandrade-full-stack-developer/" target="_blank" >
                 
-                        <div class="linkButton">
-                            <span >
-                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"  >
-                            Linkedin</span>
-                        </div>
-                    
-                    </a>
-                </article>
-            <div id="app" style="display:flex; justify-content:center ; align-items: center; flex-direction: row; flex-wrap: wrap;">
-            </div>
-            <div class="tope"></div>
+                </a>
+            </article>
+        <div id="app" style="display:flex; justify-content:center ; align-items: center; flex-direction: row; flex-wrap: wrap;">
         </div>
+        <div class="tope"></div>
+    </div>
       
     <div class="divFooter" >
         <div class="footer" >
@@ -87,6 +87,7 @@
 
  
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script>
         
         function preguntar(){
@@ -98,10 +99,9 @@
                      Attr:'src',
                      img: "https://images.pexels.com/photos/10026491/pexels-photo-10026491.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                      items: [
-                        { message: 'JavaScript Vainilla',sueldo:30000,img:"./imgs/jslogo.png" }, 
-              
-                        { message: 'VUE.js',sueldo:30000,img:"https://ih1.redbubble.net/image.393347411.1344/pp,840x830-pad,1000x1000,f8f8f8.u5.jpg" }, 
-                        { message: 'React.js',sueldo:30000,img:"./imgs/React.png" }
+                        { title:'Sistema de control',message: 'Portafolio',sueldo:30000,img:"./imgs/jslogo.png" }, 
+                        { title:'Sistema de control',message: 'VUE.js',sueldo:30000,img:"https://ih1.redbubble.net/image.393347411.1344/pp,840x830-pad,1000x1000,f8f8f8.u5.jpg" }, 
+                        { title:'Sistema de control',message: 'React.js',sueldo:30000,img:"./imgs/React.png" }
                     ]
                  };
              },
@@ -125,17 +125,25 @@
                                 
                                 <img class="profile-data--img2" :src='post.img' alt="">
                                 <div class="column" style=" margin-top: 50px; margin-left: 10px; " >
-                                    <h1>{{post.message}}</h1>
-                                    <h2>{{post.sueldo}}</h2>
+                                    <h1>{{post.title}}</h1>
+                                    <h2>{{post.message}}</h2>
                                 </div>
                             </div>
                         
                             <div class="item2">
-                                
-                                </div>
-                            <div class="follow item3" style=" height: 85px;" ></div>           
+                                <h2>Stack tecnologico</h2>
+                                <ul>
+                                    <li>HTML5</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                </ul>
+                                <h2>Descripcion breve:</h2>
 
-                        </div>
+                            </div>
+                            <div class="follow item3" style=" height: 95px; display: grid; align-items: center;  align-content: center; justify-content: space-evenly " >
+                                <h1>Ver</h1>
+                            </div>           
+                            </div>
                     </article>
                             `
         });

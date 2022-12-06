@@ -194,15 +194,22 @@ width: 50%;
 color: white;
 }
 .item3{
-height: 85px;
-width: 100%;
-background: #242424;
+    height: 95px;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    background: #242424;
 }
 .item2{
-
+    padding-top: 10px;
+padding-left: 10px;
 height: 100%;
 width: 100%;
 background: rgb(255, 255, 255);
+}
+.item2 h2{
+    text-align: left;
 }
 .item1{
     display: flex;
@@ -243,7 +250,7 @@ flex-direction: column;
 color: white;
 }
 
-ul {
+nav ul {
 height: 100%;
 width: 100%;
 align-items: center;
