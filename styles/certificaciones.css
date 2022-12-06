@@ -1,0 +1,23 @@
+body{
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    width: 100%;
+    height: 100vh;
+    display: block;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+.certificados-container{
+   display: flex;
+}
+
+.certificado{
+    margin: 5px;
+    background-color: white;
+    border-radius: 8px;
+    width: 450px;
+}
+
+.certificado img{
+    object-fit: cover;
+}
