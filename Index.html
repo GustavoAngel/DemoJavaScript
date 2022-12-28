@@ -199,6 +199,28 @@
             //document.getElementById("bodyMain").style='justify-content: left;';
         }
         
+        let pasos = 0;
+
+// Comprobar si el API de sensores está disponible
+if (window.DeviceMotionEvent) {
+  // Iniciar la detección de movimientos
+  window.addEventListener("devicemotion", (event) => {
+    // Obtener los valores del acelerómetro y giroscopio
+    const x = event.acceleration.x;
+    const y = event.acceleration.y;
+    const z = event.acceleration.z;
+    const alpha = event.rotationRate.alpha;
+    const beta = event.rotationRate.beta;
+    const gamma = event.rotationRate.gamma;
+
+    // Utilizar los valores para detectar movimientos y contar los pasos
+    // Este código puede variar según la forma en que desees contar los pasos
+    if (Math.abs(x) > 2 || Math.abs(y) > 2 || Math.abs(z) > 2) {
+      pasos++;
+      alert(pasos);
+    }
+  });
+
     </script>
    
 </body>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inicio de sesión</title>
+  
+  <style>
+   html, body {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+  background-color: #f1f1f1;
+  font-family: sans-serif;
+}
+
+.login-container {
+  width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+button {
+  height: 40px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <form>
+      <h1>Inicio de sesión</h1>
+      <input type="text" placeholder="Usuario" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+  <script lang="js">
+    // Este código se encargará de validar el usuario y la contraseña
+// cuando el usuario haga clic en el botón "Iniciar sesión"
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+    console.log(form);
+  const usuario = form.elements[0].value;
+  const contraseña = form.elements[1].value;
+
+  if (usuario === "admin" && contraseña === "admin") {
+    alert("Inicio de sesión exitoso!");
+  } else {
+    alert("Usuario o contraseña incorrectos");
+  }
+});
+
+let pasos = 0;
+
+// Comprobar si el API de sensores está disponible
+if (window.DeviceMotionEvent) {
+  // Iniciar la detección de movimientos
+  window.addEventListener("devicemotion", (event) => {
+    // Obtener los valores del acelerómetro y giroscopio
+    const x = event.acceleration.x;
+    const y = event.acceleration.y;
+    const z = event.acceleration.z;
+    const alpha = event.rotationRate.alpha;
+    const beta = event.rotationRate.beta;
+    const gamma = event.rotationRate.gamma;
+
+    // Utilizar los valores para detectar movimientos y contar los pasos
+    // Este código puede variar según la forma en que desees contar los pasos
+    if (Math.abs(x) > 2 || Math.abs(y) > 2 || Math.abs(z) > 2) {
+      pasos++;
+    }
+  });
+}
+  </script>
+</body>
+</html>
