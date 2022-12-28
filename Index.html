@@ -200,8 +200,7 @@
         }
         
         let pasos = 0;
-
-// Comprobar si el API de sensores está disponible
+        // Comprobar si el API de sensores está disponible
 if (window.DeviceMotionEvent) {
   // Iniciar la detección de movimientos
   window.addEventListener("devicemotion", (event) => {
@@ -217,9 +216,12 @@ if (window.DeviceMotionEvent) {
     // Este código puede variar según la forma en que desees contar los pasos
     if (Math.abs(x) > 2 || Math.abs(y) > 2 || Math.abs(z) > 2) {
       pasos++;
-      alert(pasos);
-    }
-  });
+      alert(pasos)
+        }
+    });
+}
+
+
 
     </script>
    
