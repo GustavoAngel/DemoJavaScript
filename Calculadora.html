@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcuradora de billetes</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            display: flex;            
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(78, 207, 207);
+        }
+        .maindiv{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: rgb(255, 255, 255);
+            padding: 25px;
+        }
+        label{
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        label input{
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+        .btn-primary{
+            background-color: rgb(78, 207, 207);
+            border: 0;
+            font-weight: bold;
+            color: white;
+            height: 35px;
+            cursor: pointer;
+        }
+        .btn-primary:hover{
+            background-color: rgb(42, 160, 160);
+        }
+        .item-container{
+            display: flex;    
+            flex-wrap: wrap;
+            max-height: 100%;
+            position: absolute;
+            padding: 10px;
+            left: 0;
+            gap: 10px;
+            flex-direction: column;
+        }
+        .item{
+            /* height: 80px; */
+            width: 180px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+        .minietiqueta{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="maindiv">
+        <h1>Calculadora de billetes</h1>
+        <label for="">
+            Quinientos $500
+            <input type="text" oninput="demo()"   ="this.value = this.value.replace(/[^\d]/g, '')" 
+            value="0" id="input500">
+        </label>
+        <label for="">
+            Docientos $200
+            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input200">
+        </label>
+        <label for="">
+            Cien $100
+            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input100">
+        </label>
+        <label for="">
+            Cincuenta $50
+            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input50">
+        </label>
+        <label for="">
+            Veinte $20
+            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input20">
+        </label>
+        <label for="">
+            Total
+            <input type="text" id="total">
+        </label>       
+        <button class="btn-primary" id="guardar-btn">Guardar</button>
+    </div>
+    
+    <div class="item-container">
+        <div class="item">
+           <label class="minietiqueta" for="">Billetes</label>
+           <label class="minietiqueta" for="">500</label>
+           <label class="minietiqueta" for="">200</label>
+           <label class="minietiqueta" for="">100</label>
+           <label class="minietiqueta" for="">20</label>
+        </div>
+    </div>
+    
+    <script>
+        
+  function soloNumeros() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+  }
+
+        let cargar = function () {
+            let valor = localStorage.getItem('billetes');
+            let objeto = JSON.parse(valor);
+            let quinqui = document.querySelector('#input500');
+            let doscientos = document.querySelector('#input200');
+            let cien = document.querySelector('#input100');
+            let cincuenta = document.querySelector('#input50');
+            let viente = document.querySelector('#input20');
+
+            quinqui.value = objeto.quinqui;
+            doscientos.value = objeto.doscientos;
+            cien.value = objeto.cien;
+            cincuenta.value = objeto.cincuenta;
+            viente.value = objeto.viente;
+        }
+
+        window.addEventListener('load', cargar);
+
+        function SumandoNumeros(param) {
+            let cortado = param.split('+');
+            if (cortado.length>1) {
+                let suma= cortado[0]+cortado[1]
+                return suma;
+            }
+            console.log(cortado);
+            return param;
+        }
+        function demo(){
+            
+            let quinqui = document.querySelector('#input500').value;  
+            //document.querySelector('#input500').value = quinqui;          
+            let doscientos = document.querySelector('#input200').value;
+            let cien = document.querySelector('#input100').value;
+            let cincuenta = document.querySelector('#input50').value;
+            let viente = document.querySelector('#input20').value;
+            let totaltxt = document.querySelector('#total');
+            let total = 0;
+
+            const obj = {quinqui: quinqui, doscientos: doscientos,cien: cien, cincuenta: cincuenta, viente:viente  };
+            localStorage.setItem('billetes', JSON.stringify(obj));
+
+
+
+            total += quinqui * 500;
+            total += doscientos * 200;
+            total += cien * 100;
+            total += cincuenta * 50;
+            total += viente * 20;
+
+            console.log(total);
+            totaltxt.value= total;
+        }
+
+
+    </script>
+</body>
+</html>
