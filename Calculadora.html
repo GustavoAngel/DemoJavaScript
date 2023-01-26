@@ -45,6 +45,17 @@
         .btn-primary:hover{
             background-color: rgb(42, 160, 160);
         }
+        .btn-secundary{
+            background-color: rgb(49, 136, 136);
+            border: 0;
+            font-weight: bold;
+            color: white;
+            height: 35px;
+            cursor: pointer;
+        }
+        .btn-secundary:hover{
+            background-color: rgb(34, 97, 97);
+        }
         .item-container{
             display: flex;    
             flex-wrap: wrap;
@@ -97,9 +108,10 @@
             <input type="text" id="total">
         </label>       
         <button class="btn-primary" id="guardar-btn">Guardar</button>
+        <button class="btn-secundary" id="limpiar-btn">Limpiar</button>
     </div>
     
-    <div class="item-container">
+    <div class="item-container" style="display: none;">
         <div class="item">
            <label class="minietiqueta" for="">Billetes</label>
            <label class="minietiqueta" for="">500</label>
@@ -111,9 +123,15 @@
     
     <script>
         
-  function soloNumeros() {
-    this.value = this.value.replace(/[^0-9]/g, '');
-  }
+        function soloNumeros() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        }
+
+        let limpiarbtn = document.querySelector('#limpiar-btn');
+
+        limpiarbtn.addEventListener('click', function () {
+           alert('Diosito hola'); 
+        });
 
         let cargar = function () {
             let valor = localStorage.getItem('billetes');
