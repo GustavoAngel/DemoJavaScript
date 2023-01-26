@@ -148,6 +148,8 @@
             document.querySelector('#input100').value = 0 ;
             document.querySelector('#input50').value = 0 ;
             document.querySelector('#input20').value = 0 ;
+            document.querySelector('#total').value = 0 ;
+            this.demo();
         });
 
         let cargar = function () {
@@ -190,8 +192,6 @@
 
             const obj = {quinqui: quinqui, doscientos: doscientos,cien: cien, cincuenta: cincuenta, viente:viente  };
             localStorage.setItem('billetes', JSON.stringify(obj));
-
-
 
             total += quinqui * 500;
             total += doscientos * 200;
