@@ -84,24 +84,23 @@
         <h1>Calculadora de billetes</h1>
         <label for="">
             Quinientos $500
-            <input type="text" oninput="demo()"   ="this.value = this.value.replace(/[^\d]/g, '')" 
-            value="0" id="input500">
+            <input type="text" oninput="demo()" onkeypress="return valideKey(event);"  value="0" id="input500">
         </label>
         <label for="">
             Docientos $200
-            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input200">
+            <input type="text" oninput="demo()" onkeypress="return valideKey(event);" pattern="[0-9]*" value="0" id="input200">
         </label>
         <label for="">
             Cien $100
-            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input100">
+            <input type="text" oninput="demo()" onkeypress="return valideKey(event);" pattern="[0-9]*" value="0" id="input100">
         </label>
         <label for="">
             Cincuenta $50
-            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input50">
+            <input type="text" oninput="demo()" onkeypress="return valideKey(event);" pattern="[0-9]*" value="0" id="input50">
         </label>
         <label for="">
             Veinte $20
-            <input type="text" oninput="demo()" pattern="[0-9]*" value="0" id="input20">
+            <input type="text" oninput="demo()" onkeypress="return valideKey(event);" pattern="[0-9]*" value="0" id="input20">
         </label>
         <label for="">
             Total
@@ -122,7 +121,20 @@
     </div>
     
     <script>
-        
+       
+       function valideKey(evt){
+			// code is the decimal ASCII representation of the pressed key.
+			var code = (evt.which) ? evt.which : evt.keyCode;
+			
+			if(code==8) { // backspace.
+			  return true;
+			} else if(code>=48 && code<=57) { // is a number.
+			  return true;
+			} else{ // other keys.
+			  return false;
+			}
+		}
+
         function soloNumeros() {
             this.value = this.value.replace(/[^0-9]/g, '');
         }
@@ -130,7 +142,12 @@
         let limpiarbtn = document.querySelector('#limpiar-btn');
 
         limpiarbtn.addEventListener('click', function () {
-           alert('Diosito hola'); 
+            document.querySelector('#input500').value = 0 ;  
+            //document.querySelector('#input500').value = quinqui;          
+            document.querySelector('#input200').value = 0 ;
+            document.querySelector('#input100').value = 0 ;
+            document.querySelector('#input50').value = 0 ;
+            document.querySelector('#input20').value = 0 ;
         });
 
         let cargar = function () {
