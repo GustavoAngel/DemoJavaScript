@@ -111,6 +111,19 @@
         font-size: 2em; /* Cambiar el tamaño del texto para pantallas más pequeñas */
       }
 
+      .divContainerNeon
+    {
+        background-image: url('imgs/ladrilloneon.avif'); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen */
+        background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
       .divContainerNeon{
         height: 800px;
         
@@ -128,6 +141,7 @@
         {
             position: relative;
             margin-top: 800px;
+            height: auto;
             bottom: 0;
             margin: 12px;
             width: 90%;
@@ -150,6 +164,8 @@
     <nav>
         <a href="#">Crea tu propio diseño neon</a>
     </nav>
+
+    <div style="height: auto;"> 
 
     <div class="divContainerNeon" id="neon-output2" >
         <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
@@ -212,6 +228,7 @@
   </label>
 
     </div>
+</div>
   
 
   <script>
