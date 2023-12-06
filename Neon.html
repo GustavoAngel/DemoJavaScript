@@ -13,6 +13,24 @@
       background-color: #111;
       margin: 0;
     }
+    .divMaAIN{
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #111;
+      margin: 0;
+    }
+
+    @font-face {
+    font-family: 'MiFuente';
+    src: url('Fonts/NEON\ GLOW.otf') format('otf'); /* Ruta relativa a tu carpeta de fuentes */
+         
+    /* Agrega más formatos si es necesario */
+    font-weight: normal;
+    font-style: normal;
+}
 
     .neon-text {
       font-size: 3em;
@@ -26,13 +44,14 @@
     {
         background-image: url('imgs/sillon.avif'); /* Reemplaza 'url_de_tu_imagen.jpg' con la URL de tu imagen */
         background-size: 100% 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
     }
     .color-circle {
       width: 30px;
@@ -99,6 +118,7 @@
     }
 
     .align-button {
+      width: 55px;
       background-color: #4CAF50;
       color: white;
       padding: 10px 15px;
@@ -123,6 +143,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: static;
+
     }
 
       .divContainerNeon{
@@ -135,6 +157,7 @@
       }
 
       .align-button {
+        
         margin-right: 0; /* Quitar el margen derecho en pantallas pequeñas */
         margin-bottom: 5px; /* Agregar un pequeño margen inferior entre los botones de alineación en pantallas pequeñas */
       }
@@ -166,19 +189,19 @@
         <a href="#">Crea tu propio diseño neon</a>
     </nav>
 
-    <div style="height: auto;"> 
+    <div class="divMaAIN" style="height: auto;display: flex;"> 
 
-    <div class="divContainerNeon" id="neon-output2" >
-        <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
-        cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
-        text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px; color: rgb(255, 255, 255);">
-            Tu Anuncio 
+        <div class="divContainerNeon" id="neon-output2" >
+            <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
+            cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
+            text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px; color: rgb(255, 255, 255);">
+                Tu Anuncio 
+            </div>
         </div>
-    </div>
-    
-    <div class="flotante" style="background-color: white; ">
+        
+        <div class="flotante" style="background-color: white; ">
     <h3>Escribe lo que imaginas de tu anuncio neon</h3>
-        <textarea id="texto-input" rows="4" cols="50" placeholder="Escribe tu texto aquí"></textarea>
+        <textarea id="texto-input" style="width: 100%;" rows="4" cols="50" placeholder="Escribe tu texto aquí"></textarea>
         
         <h3>Selecciona el tipo de letra:</h3>
   
@@ -192,13 +215,13 @@
     <option value="Trebuchet MS">Trebuchet MS</option>
     <option value="Palatino Linotype">Palatino Linotype</option>
     <option value="Impact">Impact</option>
-    <option value="Lucida Console">Lucida Console</option>
+    <option value="'MiFuente'">Neon glow</option>
   </select>
 
   <div >
     <h3>Selecciona el color</h3>
         
-    <div style="display: flex; background-color: #ffffff; justify-content: left; align-items:flex-start;;">
+    <div style="display: flex; flex-wrap: wrap; background-color: #ffffff; justify-content: left; align-items:flex-start;;">
         
     
     <div class="color-circle" style="background-color: #dfdfdf" onclick="cambiarColor('255, 255, 255')"></div>
@@ -217,7 +240,7 @@
   <label for="file-upload">Subir imagen de fondo</label>
   <input type="file" id="file-upload" onchange="cambiarFondo()">
 
-  <div class="align-buttons">
+  <div class="align-buttons" style="display: flex; flex-wrap: wrap; gap: 5px;">
     <div class="align-button" onclick="cambiarAlineacion('left')">Izquierda</div>
     <div class="align-button" onclick="cambiarAlineacion('center')">Centro</div>
     <div class="align-button" onclick="cambiarAlineacion('right')">Derecha</div>
@@ -229,6 +252,7 @@
   </label>
 
     </div>
+
 </div>
   
 
