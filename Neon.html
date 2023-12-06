@@ -170,11 +170,22 @@
     <div class="align-button" onclick="cambiarAlineacion('right')">Derecha</div>
   </div>
 
+  <div class="toggle-label">Toggle para text-shadow:</div>
+  <label class="toggle">
+    <input type="checkbox" id="toggle-text-shadow" onclick="toggleTextShadow()"> Apagar
+  </label>
+
     </div>
   
 
   <script>
-
+function toggleTextShadow() {
+    debugger;
+    let docu = document.getElementById('toggle-text-shadow');
+      neonOutput.style.textShadow = docu.checked
+        ? "none"
+        : "rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px";
+    }
     const textarea = document.getElementById('texto-input');
     const tipoLetraSelect = document.getElementById('tipo-letra');
     const neonOutput = document.getElementById('neon-output');
@@ -221,7 +232,8 @@
 
     function cambiarColor(color) {
       const colorString = `rgb(${color})`;
-      neonOutput.style.textShadow = `${colorString} 0px 0px 5px, ${colorString} 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px`;
+      debugger;
+      neonOutput.style.textShadow = `rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, ${colorString} 0px 0px 20px, ${colorString} 0px 0px 30px, ${colorString} 0px 0px 40px, ${colorString} 0px 0px 55px, rgb(255, 255, 255) 0px 0px 75px`;
     }
 
     function cambiarFondo() {
