@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #111;
+      margin: 0;
+    }
+
+    .neon-text {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 0 0 10px #fff; /* Text-shadow inicial en blanco */
+    }
+  </style>
+</head>
+<body>
+  <textarea id="texto-input" rows="4" cols="50" placeholder="Escribe tu texto aquí"></textarea>
+
+  <label for="tipo-letra">Selecciona el tipo de letra:</label>
+  <select id="tipo-letra">
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Arial">Arial</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Comic Sans MS">Comic Sans MS</option>
+    <option value="Trebuchet MS">Trebuchet MS</option>
+    <option value="Palatino Linotype">Palatino Linotype</option>
+    <option value="Impact">Impact</option>
+    <option value="Lucida Console">Lucida Console</option>
+  </select>
+
+  <label for="color-shadow">Selecciona el color del text-shadow:</label>
+  <select id="color-shadow">
+    <option value="#fff">Blanco</option>
+    <option value="#ff0000">Rojo</option>
+    <option value="#00ff00">Verde</option>
+    <option value="#0000ff">Azul</option>
+    <option value="#ffff00">Amarillo</option>
+    <option value="#ff00ff">Magenta</option>
+    <option value="#00ffff">Cian</option>
+    <option value="#ffA500">Naranja</option>
+    <option value="#800080">Púrpura</option>
+    <option value="#008000">Verde Oscuro</option>
+  </select>
+
+  <div id="neon-output" class="neon-text"></div>
+
+  <script>
+    const textarea = document.getElementById('texto-input');
+    const tipoLetraSelect = document.getElementById('tipo-letra');
+    const colorShadowSelect = document.getElementById('color-shadow');
+    const neonOutput = document.getElementById('neon-output');
+
+    textarea.addEventListener('input', actualizarTexto);
+    tipoLetraSelect.addEventListener('change', actualizarTipoLetra);
+    colorShadowSelect.addEventListener('change', actualizarColorShadow);
+
+    function actualizarTexto() {
+      const texto = textarea.value;
+      neonOutput.innerHTML = texto.replace(/\n/g, '<br>');
+    }
+
+    function actualizarTipoLetra() {
+      const tipoLetraSeleccionado = tipoLetraSelect.value;
+      neonOutput.style.fontFamily = tipoLetraSeleccionado;
+    }
+
+    function actualizarColorShadow() {
+      const colorShadowSeleccionado = colorShadowSelect.value;
+      neonOutput.style.textShadow = `0 0 10px ${colorShadowSeleccionado}`;
+    }
+  </script>
+</body>
+</html>
