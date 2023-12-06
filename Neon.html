@@ -111,6 +111,11 @@
         font-size: 2em; /* Cambiar el tamaño del texto para pantallas más pequeñas */
       }
 
+      .divContainerNeon{
+        height: 800px;
+        
+
+      }
       .align-buttons {
         flex-direction: column; /* Cambiar la dirección de los botones de alineación en pantallas pequeñas */
       }
@@ -122,10 +127,18 @@
       .flotante
         {
             position: relative;
-            margin-top: 600px;
+            margin-top: 800px;
             bottom: 0;
             margin: 12px;
             width: 90%;
+        }
+
+        #neon-output {
+        position: absolute;
+        z-index: 9;
+        left: 10;
+        border: 1px solid #d3d3d3;
+        text-align: center;
         }
     }
     
@@ -135,16 +148,14 @@
 <body >
     
     <nav>
-        <a href="#">Ordenar</a>
-        <a href="#">Crear</a>
-        <a href="#">Ejemplos</a>
+        <a href="#">Crea tu propio diseño neon</a>
     </nav>
 
-    <div class="divContainerNeon" id="neon-output2">
+    <div class="divContainerNeon" id="neon-output2" >
         <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
         cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
         text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px; color: rgb(255, 255, 255);">
-            Tu Anuncio
+            Tu Anuncio 
         </div>
     </div>
     
