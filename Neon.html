@@ -73,6 +73,7 @@
       margin-right: 15px;
       border-radius: 10px; /* ajusta el radio para las esquinas redondeadas */
       padding: 18px;
+      height: 80%; width: 30%;
     }
 
   
@@ -105,6 +106,30 @@
       margin-right: 10px;
     }
 
+    @media only screen and (max-width: 600px) {
+      .neon-text {
+        font-size: 2em; /* Cambiar el tamaño del texto para pantallas más pequeñas */
+      }
+
+      .align-buttons {
+        flex-direction: column; /* Cambiar la dirección de los botones de alineación en pantallas pequeñas */
+      }
+
+      .align-button {
+        margin-right: 0; /* Quitar el margen derecho en pantallas pequeñas */
+        margin-bottom: 5px; /* Agregar un pequeño margen inferior entre los botones de alineación en pantallas pequeñas */
+      }
+      .flotante
+        {
+            position: relative;
+            margin-top: 600px;
+            bottom: 0;
+            margin: 12px;
+            width: 90%;
+        }
+    }
+    
+
   </style>
 </head>
 <body >
@@ -119,11 +144,11 @@
         <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
         cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
         text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px; color: rgb(255, 255, 255);">
-            Diseña tu anuncio neon
+            Tu Anuncio
         </div>
     </div>
     
-    <div class="flotante" style="background-color: white; height: 80%; width: 30%;">
+    <div class="flotante" style="background-color: white; ">
     <h3>Escribe lo que imaginas de tu anuncio neon</h3>
         <textarea id="texto-input" rows="4" cols="50" placeholder="Escribe tu texto aquí"></textarea>
         
