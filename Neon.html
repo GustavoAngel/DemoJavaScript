@@ -86,10 +86,24 @@
     #neon-output {
   position: absolute;
   z-index: 9;
-  left: 10%;
+  left: 15%;
   border: 1px solid #d3d3d3;
   text-align: center;
 }
+
+.align-buttons {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .align-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
 
   </style>
 </head>
@@ -103,19 +117,18 @@
 
     <div class="divContainerNeon" id="neon-output2">
         <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
-        cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 95px; top: 15%; white-space: nowrap; line-height: 115%; 
+        cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
         text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px; color: rgb(255, 255, 255);">
             Diseña tu anuncio neon
         </div>
-    
     </div>
     
     <div class="flotante" style="background-color: white; height: 80%; width: 30%;">
-        Escribe lo que imaginas de tu anuncio neon
-        <br>
+    <h3>Escribe lo que imaginas de tu anuncio neon</h3>
         <textarea id="texto-input" rows="4" cols="50" placeholder="Escribe tu texto aquí"></textarea>
         
-  <label for="tipo-letra">Selecciona el tipo de letra:</label>
+        <h3>Selecciona el tipo de letra:</h3>
+  
   <select id="tipo-letra">
     <option value="Times New Roman">Times New Roman</option>
     <option value="Arial">Arial</option>
@@ -130,9 +143,12 @@
   </select>
 
   <div >
-    <div style="display: flex; background-color: #ffffff; justify-content: center; align-items: center;">
-    <label for="color-shadow">Color:</label>
-    <div class="color-circle" style="background-color: #fff" onclick="cambiarColor('255, 255, 255')"></div>
+    <h3>Selecciona el color</h3>
+        
+    <div style="display: flex; background-color: #ffffff; justify-content: left; align-items:flex-start;;">
+        
+    
+    <div class="color-circle" style="background-color: #dfdfdf" onclick="cambiarColor('255, 255, 255')"></div>
     <div class="color-circle" style="background-color: #ff0000" onclick="cambiarColor('255, 0, 0')"></div>
     <div class="color-circle" style="background-color: #00ff00" onclick="cambiarColor('0, 255, 0')"></div>
     <div class="color-circle" style="background-color: #0000ff" onclick="cambiarColor('0, 0, 255')"></div>
@@ -147,6 +163,12 @@
 
   <label for="file-upload">Subir imagen de fondo</label>
   <input type="file" id="file-upload" onchange="cambiarFondo()">
+
+  <div class="align-buttons">
+    <div class="align-button" onclick="cambiarAlineacion('left')">Izquierda</div>
+    <div class="align-button" onclick="cambiarAlineacion('center')">Centro</div>
+    <div class="align-button" onclick="cambiarAlineacion('right')">Derecha</div>
+  </div>
 
     </div>
   
@@ -167,6 +189,10 @@
 
     function allowDrop(event) {
       event.preventDefault();
+    }
+
+    function cambiarAlineacion(alineacion) {
+      neonOutput.style.textAlign = alineacion;
     }
 
     document.addEventListener("drag", function (event) {
