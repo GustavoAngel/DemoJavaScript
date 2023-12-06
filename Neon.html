@@ -24,13 +24,10 @@
     }
 
     @font-face {
-    font-family: 'MiFuente';
-    src: url('Fonts/NEON\ GLOW.otf') format('otf'); /* Ruta relativa a tu carpeta de fuentes */
-         
-    /* Agrega más formatos si es necesario */
-    font-weight: normal;
-    font-style: normal;
-}
+    font-family: 'NEON GLOW';
+    src: url('Fonts/NEONGLOW.otf') format('otf');
+  }
+
 
     .neon-text {
       font-size: 3em;
@@ -69,7 +66,7 @@
             height: 60px;
         }
         nav {
-            z-index: 11;
+            z-index: 9;
             width: 100%;
             display: flex;
             justify-content: space-around;
@@ -193,7 +190,7 @@
 
         <div class="divContainerNeon" id="neon-output2" >
             <div id="neon-output" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" class="neon-text" style="  padding: 10px; 
-            cursor: move; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
+            cursor: move; font-family: NEON GLOW; font-variant-ligatures: no-common-ligatures; font-size: 58px; top: 15%; white-space: nowrap; line-height: 115%; 
             text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(2, 116, 252) 0px 0px 20px, rgb(2, 116, 252) 0px 0px 30px, rgb(2, 116, 252) 0px 0px 40px, rgb(2, 116, 252) 0px 0px 55px, rgb(2, 116, 252) 0px 0px 75px; color: rgb(255, 255, 255);">
                 Tu Anuncio 
             </div>
@@ -215,7 +212,7 @@
     <option value="Trebuchet MS">Trebuchet MS</option>
     <option value="Palatino Linotype">Palatino Linotype</option>
     <option value="Impact">Impact</option>
-    <option value="'MiFuente'">Neon glow</option>
+    <option value="'NEON GLOW'">Neon glow</option>
   </select>
 
   <div >
